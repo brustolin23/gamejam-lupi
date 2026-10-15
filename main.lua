@@ -53,6 +53,6 @@ function loop(frame)
     atualizar_explosoes()
     ui.print("B = explodir ", 32, 32, Palette.hex(0xFFFFFF))
     ui.print("Explosões:"..cont, 32, 64, Palette.hex(0xFFFFFF))
-    ui.print("Comprar explosão $"..price.." = X")
+    ui.print("Comprar explosão $"..price.." = X", 32, 96, Palette.hex(0xFFFFFF))
     desenhar_explosoes()
 end
