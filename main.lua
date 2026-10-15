@@ -1,4 +1,5 @@
 require "palette"
+require "sprites"
 
 meu_sprite = "sprites/effects/PNG/Explosions/explosion/frame0000.png"
 
