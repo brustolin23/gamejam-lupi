@@ -14,5 +14,5 @@ function loop(frame)
     ui.cls(Palette.hex(0x45283c))
     
     ui.print("Teste jogo!", 32, 32, Palette.hex(0xFFFFFF))
-    ui.spr(meu_sprite, 100, 80)
+    ui.spr(Sprites.sprites.effects.PNG.Explosions.explosion.frame0000, 100, 80)
 end 
