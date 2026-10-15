@@ -3,7 +3,8 @@ require "sprites"
 
 local NUM_QUADROS = 13
 local CADENCIA = 3
-i = 0
+cont = 0
+price = 5
 
 explosoes = {}
 
@@ -41,10 +42,17 @@ function loop(frame)
 
     if ui.btnp(BTN_Z) then
         criar_explosao(100, 80)
-        i = i+1
+        cont = cont+1
+    end
+
+    if ui.btnp(BTN_X) then 
+        cont = cont - price
+        price = price + 5 + price/5
     end
 
     atualizar_explosoes()
-    ui.print("Z = explodir "..i, 32, 32, Palette.hex(0xFFFFFF))
+    ui.print("B = explodir ", 32, 32, Palette.hex(0xFFFFFF))
+    ui.print("Explosões:"..cont, 32, 64, Palette.hex(0xFFFFFF))
+    ui.print("Comprar explosão $"..price.." = X")
     desenhar_explosoes()
 end
