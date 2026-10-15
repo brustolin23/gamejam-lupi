@@ -46,7 +46,7 @@ function loop(frame)
         cont = cont+up
     end
 
-    if ui.btnp(BTN_X) and cont-price>0 then 
+    if ui.btnp(BTN_X) and cont-price=>0 then 
         cont = cont - price
         price = price + 10 + price//2
         up = up+1+up//3
