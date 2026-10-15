@@ -3,6 +3,7 @@ require "sprites"
 
 local NUM_QUADROS = 13
 local CADENCIA = 3
+i = 0
 
 explosoes = {}
 
@@ -20,6 +21,7 @@ local function atualizar_explosoes()
     end
 end
 
+//função de explodir
 local function desenhar_explosoes()
     for _, e in ipairs(explosoes) do
         local quadro = e.t // CADENCIA + 1
@@ -39,9 +41,10 @@ function loop(frame)
 
     if ui.btnp(BTN_Z) then
         criar_explosao(100, 80)
+        i = i+1
     end
 
     atualizar_explosoes()
-    ui.print("Z = explodir", 32, 32, Palette.hex(0xFFFFFF))
+    ui.print("Z = explodir "..i, 32, 32, Palette.hex(0xFFFFFF))
     desenhar_explosoes()
 end
