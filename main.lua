@@ -2,6 +2,7 @@ require "palette"
 require "sprites"
 
 meu_sprite = ui.sprite("sprites/effects/PNG/Explosions/explosion/frame0000.png")
+
 function loop(frame)
     
     for i = 1, #Palette do
