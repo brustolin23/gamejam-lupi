@@ -5,6 +5,7 @@ local NUM_QUADROS = 13
 local CADENCIA = 3
 cont = 0
 price = 5
+up = 1
 
 explosoes = {}
 
@@ -42,12 +43,13 @@ function loop(frame)
 
     if ui.btnp(BTN_Z) then
         criar_explosao(100, 80)
-        cont = cont+1
+        cont = cont+up
     end
 
     if ui.btnp(BTN_X) then 
         cont = cont - price
-        price = price + 5 + price/5
+        price = price + 5 + price//5
+        up = up+1
     end
 
     atualizar_explosoes()
