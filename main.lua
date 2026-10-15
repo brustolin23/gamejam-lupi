@@ -55,7 +55,7 @@ function loop(frame)
     atualizar_explosoes()
     ui.print("B = explodir ", 32, 32, Palette.hex(0xFFFFFF))
     ui.print("Dinheiro:"..cont, 130, 32, Palette.hex(0xFFFFFF))
-    ui.print(..cont, 130, 50, Palette.hex(0xFFFFFF))
+    ui.print(cont, 130, 50, Palette.hex(0xFFFFFF))
     ui.print("Comprar pólvora  = X ($"..price..")", 230, 32, Palette.hex(0xFFFFFF))
     desenhar_explosoes()
 end
