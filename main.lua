@@ -21,7 +21,7 @@ local function atualizar_explosoes()
     end
 end
 
-//função de explodir
+--//função de explodir
 local function desenhar_explosoes()
     for _, e in ipairs(explosoes) do
         local quadro = e.t // CADENCIA + 1
