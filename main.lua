@@ -1,7 +1,6 @@
 require "palette"
-require "sprites"
 
-meu_sprite = ui.sprite("sprites/effects/PNG/Explosions/explosion/frame0000.png")
+meu_sprite = "sprites/effects/PNG/Explosions/explosion/frame0000.png"
 
 function loop(frame)
     
