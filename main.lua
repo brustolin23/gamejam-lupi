@@ -4,7 +4,7 @@ require "sprites"
 local NUM_QUADROS = 13
 local CADENCIA = 3
 cont = 0
-price = 5
+price = 10
 up = 1
 
 explosoes = {}
@@ -48,7 +48,7 @@ function loop(frame)
 
     if ui.btnp(BTN_X) and cont-price>0 then 
         cont = cont - price
-        price = price + 5 + price//5
+        price = price + 10 + price//2
         up = up+1+up//3
     end
 
