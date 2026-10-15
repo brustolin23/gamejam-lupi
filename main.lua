@@ -1,6 +1,7 @@
 require "palette"
 require "sprites"
 
+meu_sprite = ui.sprite("sprites/effects/PNG/Explosions/explosion/frame0000.png")
 function loop(frame)
     
     for i = 1, #Palette do
@@ -12,5 +13,6 @@ function loop(frame)
     ui.camera(0,0)
     ui.cls(Palette.hex(0x45283c))
     
-    ui.print("Olá Mundo!", 32, 32, Palette.hex(0xFFFFFF))
+    ui.print("Teste jogo!", 32, 32, Palette.hex(0xFFFFFF))
+    ui.spr(meu_sprite, 100, 80)
 end 
