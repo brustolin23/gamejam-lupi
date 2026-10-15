@@ -46,15 +46,16 @@ function loop(frame)
         cont = cont+up
     end
 
-    if ui.btnp(BTN_X) and cont>price then 
+    if ui.btnp(BTN_X) and cont-price>0 then 
         cont = cont - price
         price = price + 5 + price//5
-        up = up+1+up//2
+        up = up+1+up//3
     end
 
     atualizar_explosoes()
     ui.print("B = explodir ", 32, 32, Palette.hex(0xFFFFFF))
-    ui.print("Explosões:"..cont, 130, 32, Palette.hex(0xFFFFFF))
-    ui.print("Comprar explosão $"..price.." = X", 210, 32, Palette.hex(0xFFFFFF))
+    ui.print("Dinheiro:"..cont, 130, 32, Palette.hex(0xFFFFFF))
+    ui.print(..cont, 130, 50, Palette.hex(0xFFFFFF))
+    ui.print("Comprar pólvora  = X ($"..price..")", 230, 32, Palette.hex(0xFFFFFF))
     desenhar_explosoes()
 end
