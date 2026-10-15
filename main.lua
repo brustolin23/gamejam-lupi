@@ -1,19 +1,47 @@
 require "palette"
 require "sprites"
 
-meu_sprite = "sprites/effects/PNG/Explosions/explosion/frame0000.png"
+local NUM_QUADROS = 13
+local CADENCIA = 3
+
+explosoes = {}
+
+function criar_explosao(x, y)
+    table.insert(explosoes, { x = x, y = y, t = 0 })
+end
+
+local function atualizar_explosoes()
+    for i = #explosoes, 1, -1 do
+        local e = explosoes[i]
+        e.t = e.t + 1
+        if e.t // CADENCIA >= NUM_QUADROS then
+            table.remove(explosoes, i)
+        end
+    end
+end
+
+local function desenhar_explosoes()
+    for _, e in ipairs(explosoes) do
+        local quadro = e.t // CADENCIA + 1
+        local chave = string.format("%02d", quadro)
+        ui.spr(Sprites.fx.explosion[chave], e.x, e.y)
+    end
+end
 
 function loop(frame)
-    
     for i = 1, #Palette do
-        local color = Palette[i]
-        ui.palset(i - 1, color)
+        ui.palset(i - 1, Palette[i])
     end
 
-    ui.clip(0,0,480,270)
-    ui.camera(0,0)
+    ui.clip(0, 0, 480, 270)
+    ui.camera(0, 0)
     ui.cls(Palette.hex(0x45283c))
-    
-    ui.print("Teste jogo!", 32, 32, Palette.hex(0xFFFFFF))
-    ui.spr(Sprites.fx.explosion["01"], 100, 80)
-end 
+
+    if ui.btnp(BTN_Z) then
+        criar_explosao(100, 80)
+    end
+
+    atualizar_explosoes()
+    ui.print("Z = explodir", 32, 32, Palette.hex(0xFFFFFF))
+    desenhar_explosoes()
+end
